@@ -1,12 +1,24 @@
 import { StyleSheet, View } from 'react-native'
-import React from 'react'
 import RNText from '@shared/RNText'
-import Button from '@shared/Button'
 import { LinearGradient } from 'expo-linear-gradient'
 import { colors } from '@styles/colors'
 import ImageSlider from '@components/home/ImageSlider'
+import { StackNavigationProp } from '@react-navigation/stack'
+import { RootStackParamList } from 'src/navigation/Navigation'
+import FixedBottomButton from '@shared/FixedBottomButton'
 
-const Home = () => {
+// 네비게이션 타입 정의
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>
+
+type Props = {
+  navigation: HomeScreenNavigationProp
+}
+
+const Home = ({ navigation }: Props) => {
+  const onPress = () => {
+    navigation.navigate('Questions')
+  }
+
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -17,16 +29,16 @@ const Home = () => {
       />
       <RNText
         style={[styles.title, styles.centeredText]}
-        color={'neonGreen'}
+        color={'green'}
         size="t1"
       >
         나만의{'\n'}반려식물 찾기
       </RNText>
       <ImageSlider />
-      <RNText style={styles.centeredText} color={'green'}>
+      <RNText style={styles.centeredText} color={'lightBlack'}>
         당신의 공간에 맞는 완벽한 식물을 찾아보세요
       </RNText>
-      <Button>시작하기</Button>
+      <FixedBottomButton txt="시작하기" onPress={onPress} />
     </View>
   )
 }
@@ -38,11 +50,11 @@ const styles = StyleSheet.create({
     flex: 1,
     maxWidth: 512,
     overflow: 'hidden',
+    justifyContent: 'center',
   },
   title: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 160,
     marginBottom: 20,
   },
   centeredText: {

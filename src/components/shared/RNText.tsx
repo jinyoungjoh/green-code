@@ -1,4 +1,3 @@
-import React from 'react'
 import { Text, TextProps, TextStyle } from 'react-native'
 import { colors, TColors } from '@styles/colors'
 import { Typography, typographyMap } from '@styles/typography'
@@ -29,6 +28,7 @@ const RNText = ({
           textAlign,
           fontWeight: bold ? 'bold' : fontWeight,
           ...typographyMap[size],
+          letterSpacing: -0.2,
         },
         style,
       ]}

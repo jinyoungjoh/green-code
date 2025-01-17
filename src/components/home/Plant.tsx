@@ -1,4 +1,3 @@
-import React from 'react'
 import { Image, StyleSheet, View } from 'react-native'
 import PLANTS from '@assets/images/plants'
 const plantImages = Object.values(PLANTS)

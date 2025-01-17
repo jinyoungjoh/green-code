@@ -1,21 +1,36 @@
-import { Pressable, PressableProps, StyleSheet } from 'react-native'
-import React from 'react'
+import {
+  Pressable,
+  PressableProps,
+  StyleSheet,
+  ViewStyle,
+  StyleProp,
+} from 'react-native'
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated'
 import RNText from './RNText'
-import { colors } from '@styles/colors'
+import { colors, TColors } from '@styles/colors'
 
 interface TButton extends PressableProps {
   onPress?: () => void
+  color?: TColors
+  style?: StyleProp<ViewStyle>
+  disabled?: boolean
   children: React.ReactNode
 }
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable)
 
-const Button = ({ onPress, children, ...props }: TButton) => {
+const Button = ({
+  onPress,
+  color,
+  children,
+  style,
+  disabled,
+  ...props
+}: TButton) => {
   const sv = useSharedValue(1)
 
   const onPressIn = () => {
@@ -38,13 +53,16 @@ const Button = ({ onPress, children, ...props }: TButton) => {
       style={[
         styles.container,
         {
-          backgroundColor: colors.neonGreen,
+          backgroundColor: color ? colors[color] : colors.green,
+          opacity: disabled ? 0.2 : 1,
         },
+        style,
         animatedStyles,
       ]}
       onPressIn={onPressIn}
       onPressOut={onPressOut}
       {...props}
+      disabled={disabled}
     >
       <RNText color={'white'}>{children}</RNText>
     </AnimatedPressable>
@@ -55,11 +73,8 @@ export default Button
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    left: 80,
-    right: 80,
-    bottom: 32,
-    height: 54,
+    width: '100%',
+    padding: 16,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 16,

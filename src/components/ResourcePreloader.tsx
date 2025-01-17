@@ -5,7 +5,7 @@ import { Asset } from 'expo-asset'
 import fonts from '@assets/fonts'
 import images from '@assets/images'
 
-const ResourcePreloader = ({ children }) => {
+const ResourcePreloader = ({ children }: { children: React.ReactNode }) => {
   const [isReady, setIsReady] = useState(false)
   const [fontsLoaded] = useFonts(fonts)
 
