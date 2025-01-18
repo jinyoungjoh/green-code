@@ -1,0 +1,333 @@
+{
+  "monstera": {
+    "name": "몬스테라",
+    "attributes": {
+      "sunlight": 4,
+      "time": 2,
+      "maintenance": 2,
+      "durability": 5
+    },
+    "difficulty": 3,
+    "description": "실내에서 키우기 쉬운 인기 식물로, 큰 잎이 매력적입니다.",
+    "tags": ["햇빛 많이 필요", "매우 내구성 강함"],
+    "care": {
+      "watering": "일주일에 한 번",
+      "humidity": "중간 습도 선호",
+      "temperature": "18-24°C",
+      "light": "간접광 필요"
+    }
+  },
+  "rubberTree": {
+    "name": "고무나무",
+    "attributes": {
+      "sunlight": 3,
+      "time": 2,
+      "maintenance": 2,
+      "durability": 4
+    },
+    "difficulty": 3,
+    "description": "공기 정화에 탁월하며 반려동물과도 조화로운 식물입니다.",
+    "tags": ["공기 정화 탁월", "반려동물 안전"],
+    "care": {
+      "watering": "10일에 한 번",
+      "humidity": "보통 습도",
+      "temperature": "18-27°C",
+      "light": "간접광 또는 약한 직사광"
+    }
+  },
+  "snakePlant": {
+    "name": "스투키",
+    "attributes": {
+      "sunlight": 2,
+      "time": 1,
+      "maintenance": 1,
+      "durability": 5
+    },
+    "difficulty": 2,
+    "description": "관리하기 쉬운 다육식물로, 실내 환경에 적합합니다.",
+    "tags": [
+      "햇빛 적게 필요",
+      "관리 최소화",
+      "매우 내구성 강함",
+      "느리게 자람",
+      "환경 적응 뛰어남"
+    ],
+    "care": {
+      "watering": "2주에 한 번",
+      "humidity": "낮은 습도 선호",
+      "temperature": "15-27°C",
+      "light": "직사광선 피함"
+    }
+  },
+  "fern": {
+    "name": "고사리",
+    "attributes": {
+      "sunlight": 4,
+      "time": 4,
+      "maintenance": 4,
+      "durability": 3
+    },
+    "difficulty": 4,
+    "description": "습도를 좋아하며 정원 장식에 적합한 식물입니다.",
+    "tags": [
+      "햇빛 많이 필요",
+      "시간 많이 필요",
+      "관리 많이 필요",
+      "환경 적응 어려움"
+    ],
+    "care": {
+      "watering": "주 2회",
+      "humidity": "높은 습도 필요",
+      "temperature": "15-24°C",
+      "light": "간접광 또는 약한 직사광"
+    }
+  },
+  "fiddleLeafFig": {
+    "name": "떡갈잎 고무나무",
+    "attributes": {
+      "sunlight": 3,
+      "time": 3,
+      "maintenance": 3,
+      "durability": 4
+    },
+    "difficulty": 4,
+    "description": "공기 정화와 실내 장식용으로 인기 있는 식물입니다.",
+    "tags": ["반려동물 주의 필요"],
+    "care": {
+      "watering": "주 1회",
+      "humidity": "중간 습도 선호",
+      "temperature": "18-24°C",
+      "light": "밝은 간접광 필요"
+    }
+  },
+  "goldenPothos": {
+    "name": "스킨답서스",
+    "attributes": {
+      "sunlight": 3,
+      "time": 2,
+      "maintenance": 2,
+      "durability": 4
+    },
+    "difficulty": 3,
+    "description": "실내에서 잘 자라며 초보자에게 적합한 공기 정화 식물입니다.",
+    "tags": ["공기 정화 탁월", "빠르게 자람", "반려동물 안전"],
+    "care": {
+      "watering": "일주일에 한 번",
+      "humidity": "보통 습도",
+      "temperature": "15-29°C",
+      "light": "약한 직사광 또는 간접광"
+    }
+  },
+  "cactus": {
+    "name": "선인장",
+    "attributes": {
+      "sunlight": 5,
+      "time": 1,
+      "maintenance": 1,
+      "durability": 5
+    },
+    "difficulty": 3,
+    "description": "햇빛을 많이 필요로 하며 관리가 쉬운 건조 환경 식물입니다.",
+    "tags": [
+      "햇빛 많이 필요",
+      "시간 적게 필요",
+      "관리 최소화",
+      "매우 내구성 강함",
+      "느리게 자람",
+      "환경 적응 뛰어남",
+      "공기 정화 효과 없음"
+    ],
+    "care": {
+      "watering": "3-4주에 한 번",
+      "humidity": "낮은 습도 선호",
+      "temperature": "10-30°C",
+      "light": "직사광 필요"
+    }
+  },
+  "caladium": {
+    "name": "칼라디움",
+    "attributes": {
+      "sunlight": 4,
+      "time": 4,
+      "maintenance": 4,
+      "durability": 3
+    },
+    "difficulty": 4,
+    "description": "다양한 색상의 잎이 매력적인 실내 장식용 식물입니다.",
+    "tags": [
+      "햇빛 많이 필요",
+      "시간 많이 필요",
+      "관리 많이 필요",
+      "반려동물 주의 필요"
+    ],
+    "care": {
+      "watering": "주 2회",
+      "humidity": "높은 습도 필요",
+      "temperature": "18-27°C",
+      "light": "밝은 간접광 필요"
+    }
+  },
+  "rubberFig": {
+    "name": "크루시아",
+    "attributes": {
+      "sunlight": 3,
+      "time": 1,
+      "maintenance": 1,
+      "durability": 4
+    },
+    "difficulty": 2,
+    "description": "환경 적응력이 뛰어나며 관리가 쉬운 식물입니다.",
+    "tags": [
+      "시간 적게 필요",
+      "관리 최소화",
+      "환경 적응 뛰어남",
+      "반려동물 안전"
+    ],
+    "care": {
+      "watering": "10일에 한 번",
+      "humidity": "보통 습도",
+      "temperature": "15-24°C",
+      "light": "약한 직사광 또는 간접광"
+    }
+  },
+  "peperomia": {
+    "name": "페페로미아",
+    "attributes": {
+      "sunlight": 3,
+      "time": 2,
+      "maintenance": 2,
+      "durability": 3
+    },
+    "difficulty": 3,
+    "description": "작고 귀여운 잎이 특징인 실내 장식용 식물입니다.",
+    "tags": ["반려동물 안전"],
+    "care": {
+      "watering": "일주일에 한 번",
+      "humidity": "중간 습도 선호",
+      "temperature": "18-24°C",
+      "light": "간접광 필요"
+    }
+  },
+  "guineaHoya": {
+    "name": "호야",
+    "attributes": {
+      "sunlight": 3,
+      "time": 2,
+      "maintenance": 2,
+      "durability": 3
+    },
+    "difficulty": 3,
+    "description": "아름다운 꽃과 독특한 잎 형태가 매력적인 식물입니다.",
+    "tags": ["느리게 자람", "반려동물 주의 필요"],
+    "care": {
+      "watering": "1-2주에 한 번",
+      "humidity": "중간 습도 선호",
+      "temperature": "15-29°C",
+      "light": "밝은 간접광 필요"
+    }
+  },
+  "hangingPlant": {
+    "name": "행잉 플랜트",
+    "attributes": {
+      "sunlight": 3,
+      "time": 2,
+      "maintenance": 2,
+      "durability": 3
+    },
+    "difficulty": 3,
+    "description": "공중에서 자라는 식물로, 실내 장식에 적합합니다.",
+    "tags": ["반려동물 안전"],
+    "care": {
+      "watering": "일주일에 한 번",
+      "humidity": "보통 습도",
+      "temperature": "18-27°C",
+      "light": "간접광 선호"
+    }
+  },
+  "philodendron": {
+    "name": "필로덴드론",
+    "attributes": {
+      "sunlight": 3,
+      "time": 2,
+      "maintenance": 2,
+      "durability": 4
+    },
+    "difficulty": 3,
+    "description": "큰 잎이 인상적인 실내 장식용 식물입니다.",
+    "tags": ["빠르게 자람", "반려동물 주의 필요"],
+    "care": {
+      "watering": "일주일에 한 번",
+      "humidity": "중간 습도 선호",
+      "temperature": "18-29°C",
+      "light": "밝은 간접광 필요"
+    }
+  },
+  "miniPot": {
+    "name": "미니 포트",
+    "attributes": {
+      "sunlight": 2,
+      "time": 1,
+      "maintenance": 1,
+      "durability": 3
+    },
+    "difficulty": 2,
+    "description": "작은 공간에서도 키우기 쉬운 미니 식물입니다.",
+    "tags": [
+      "햇빛 적게 필요",
+      "시간 적게 필요",
+      "관리 최소화",
+      "느리게 자람",
+      "공기 정화 효과 없음"
+    ],
+    "care": {
+      "watering": "2-3주에 한 번",
+      "humidity": "낮은 습도 선호",
+      "temperature": "15-24°C",
+      "light": "약한 직사광 또는 간접광"
+    }
+  },
+  "succulents": {
+    "name": "다육식물",
+    "attributes": {
+      "sunlight": 4,
+      "time": 1,
+      "maintenance": 1,
+      "durability": 5
+    },
+    "difficulty": 2,
+    "description": "물을 적게 주어도 잘 자라는 식물입니다.",
+    "tags": [
+      "햇빛 많이 필요",
+      "시간 적게 필요",
+      "관리 최소화",
+      "매우 내구성 강함",
+      "느리게 자람",
+      "환경 적응 뛰어남",
+      "공기 정화 효과 없음"
+    ],
+    "care": {
+      "watering": "3-4주에 한 번",
+      "humidity": "낮은 습도 선호",
+      "temperature": "10-30°C",
+      "light": "직사광 필요"
+    }
+  },
+  "bambooPalm": {
+    "name": "대나무야자",
+    "attributes": {
+      "sunlight": 3,
+      "time": 3,
+      "maintenance": 3,
+      "durability": 3
+    },
+    "difficulty": 3,
+    "description": "공기 정화 효과가 뛰어난 실내 식물입니다.",
+    "tags": ["공기 정화 탁월", "반려동물 주의 필요"],
+    "care": {
+      "watering": "주 1회",
+      "humidity": "높은 습도 필요",
+      "temperature": "18-24°C",
+      "light": "밝은 간접광 필요"
+    }
+  }
+}

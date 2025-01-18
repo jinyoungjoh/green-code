@@ -1,5 +1,5 @@
-import { Score, PlantRecommendation, Questions } from '@models/plants'
-import { plantTypes, plantRecommendations } from '@constants/plants'
+import { Score, PlantRecommendation } from '@models/plants'
+import { PLANT_TYPES, PLANT_RECOMMENDATIONS } from '@constants/plants'
 import { questions } from 'src/data/questions'
 
 /**
@@ -50,16 +50,16 @@ function clampScore(score: Score): Score {
  * 2. 사용자의 점수와 가장 가까운 식물 유형 계산
  */
 function findBestMatch(score: Score): string {
-  return Object.keys(plantTypes).reduce(
+  return Object.keys(PLANT_TYPES).reduce(
     (bestMatch, type) => {
-      const typeScore = plantTypes[type]
+      const typeScore = PLANT_TYPES[type]
       const distance = calculateDistance(score, typeScore)
 
       return distance < bestMatch.minDistance
         ? { type, minDistance: distance }
         : bestMatch
     },
-    { type: Object.keys(plantTypes)[0], minDistance: Infinity },
+    { type: Object.keys(PLANT_TYPES)[0], minDistance: Infinity },
   ).type
 }
 
@@ -82,7 +82,7 @@ function calculateDistance(score: Score, typeScore: Score): number {
 function recommendPlants(selectedAnswers: number[]): PlantRecommendation {
   const score = calculateScore(selectedAnswers)
   const bestMatchType = findBestMatch(score)
-  return plantRecommendations[bestMatchType]
+  return PLANT_RECOMMENDATIONS[bestMatchType]
 }
 
 export { recommendPlants }

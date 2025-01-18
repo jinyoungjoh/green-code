@@ -11,7 +11,7 @@ interface RNTextProps extends TextProps {
 }
 
 const RNText = ({
-  size = 't5',
+  size = 't6',
   color = 'black',
   textAlign,
   fontWeight,
@@ -26,9 +26,8 @@ const RNText = ({
         {
           color: colors[color],
           textAlign,
-          fontWeight: bold ? 'bold' : fontWeight,
           ...typographyMap[size],
-          letterSpacing: -0.2,
+          letterSpacing: -0.4,
         },
         style,
       ]}

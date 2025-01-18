@@ -1,15 +1,27 @@
 import { StyleSheet, View } from 'react-native'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import RNText from '@shared/RNText'
 import { questions } from 'src/data/questions'
 import Spacer from '@shared/Spacer'
 import FixedBottomButton from '@shared/FixedBottomButton'
 import Option from '@components/questions/Option'
 import { recommendPlants } from 'src/utils/plantUtils'
+import { RootStackParamList } from 'src/navigation/Navigation'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 const TOTAL_STEPS = questions.length
 
-const Questions = () => {
+// 네비게이션 타입 정의
+type QuestionScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Questions'
+>
+
+type Props = {
+  navigation: QuestionScreenNavigationProp
+}
+
+const Questions = ({ navigation }: Props) => {
   const [step, setSteps] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([])
   const question = questions[step]
@@ -28,7 +40,7 @@ const Questions = () => {
       setSteps(step + 1)
     } else {
       const result = recommendPlants(selectedAnswers)
-      console.log('>>>', result)
+      navigation.navigate('Recommendation', { plantInfo: result })
     }
   }
 
@@ -38,7 +50,9 @@ const Questions = () => {
         {step + 1}/{TOTAL_STEPS}
       </RNText>
       <Spacer size={4} />
-      <RNText style={{ height: 50 }}>{question.question}</RNText>
+      <RNText size="t4" style={{ height: 58, flexWrap: 'wrap', width: '100%' }}>
+        {question.question}
+      </RNText>
       <Spacer size={20} />
       <View style={styles.optionsContainer}>
         {question.options.map((option, index) => (

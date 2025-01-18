@@ -3,12 +3,15 @@ import RNText from '@shared/RNText'
 import { LinearGradient } from 'expo-linear-gradient'
 import { colors } from '@styles/colors'
 import ImageSlider from '@components/home/ImageSlider'
-import { StackNavigationProp } from '@react-navigation/stack'
 import { RootStackParamList } from 'src/navigation/Navigation'
 import FixedBottomButton from '@shared/FixedBottomButton'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 // 네비게이션 타입 정의
-type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Home'>
+type HomeScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'Home'
+>
 
 type Props = {
   navigation: HomeScreenNavigationProp
@@ -55,7 +58,6 @@ const styles = StyleSheet.create({
   title: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 20,
   },
   centeredText: {
     textAlign: 'center',

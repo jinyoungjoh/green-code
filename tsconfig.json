@@ -15,7 +15,8 @@
       "@screens/*": ["src/screens/*"],
       "@components/*": ["src/components/*"],
       "@models/*": ["src/models/*"],
-      "@constants/*": ["src/constants/*"]
+      "@constants/*": ["src/constants/*"],
+      "@data/*": ["src/data/*"]
     }
   }
 }

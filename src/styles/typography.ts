@@ -5,7 +5,7 @@ export const typographyMap = {
     lineHeight: 40,
   },
   t2: {
-    fontFamily: 'Pretendard-SemiBold',
+    fontFamily: 'Pretendard-Bold',
     fontSize: 28,
     lineHeight: 36,
   },
@@ -21,8 +21,18 @@ export const typographyMap = {
   },
   t5: {
     fontFamily: 'Pretendard-SemiBold',
-    fontSize: 16,
+    fontSize: 18,
     lineHeight: 24,
+  },
+  t6: {
+    fontFamily: 'Pretendard-SemiBold',
+    fontSize: 16,
+    lineHeight: 20,
+  },
+  t7: {
+    fontFamily: 'Pretendard-SemiBold',
+    fontSize: 15,
+    lineHeight: 20,
   },
 }
 
