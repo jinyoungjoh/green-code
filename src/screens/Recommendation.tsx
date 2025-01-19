@@ -10,7 +10,6 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import Animated, { Easing, FlipInEasyY } from 'react-native-reanimated'
 import { colors } from '@styles/colors'
 
-// 네비게이션 타입 정의
 type RecommendationNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   'Recommendation'
@@ -37,9 +36,9 @@ const PlantRecommendation = ({ navigation, route }: Props) => {
       >
         <Animated.View
           style={styles.infoContainer}
-          entering={FlipInEasyY.duration(600)
-            .delay(200)
-            .easing(Easing.in(Easing.elastic(1.3)))}
+          entering={FlipInEasyY.duration(900)
+            .delay(300)
+            .easing(Easing.in(Easing.elastic(2.3)))}
         >
           <Title name={name} />
           <Description description={description} />
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
     gap: 16,
     borderWidth: 0.5,
     borderColor: colors.lightGrey,
-    shadowColor: 'rgba(201, 211, 230, 0.6)',
+    shadowColor: 'rgb(201, 211, 230)',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 1,
     shadowRadius: 30,

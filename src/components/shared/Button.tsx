@@ -54,10 +54,10 @@ const Button = ({
         styles.container,
         {
           backgroundColor: color ? colors[color] : colors.green,
-          opacity: disabled ? 0.2 : 1,
         },
         style,
         animatedStyles,
+        disabled && { backgroundColor: colors.lightBlue },
       ]}
       onPressIn={onPressIn}
       onPressOut={onPressOut}
