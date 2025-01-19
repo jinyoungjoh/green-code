@@ -8,7 +8,8 @@ import Option from '@components/questions/Option'
 import { recommendPlants } from 'src/utils/plantUtils'
 import { RootStackParamList } from 'src/navigation/Navigation'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-
+import { QuestionImages } from '@assets/images/questions'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 const TOTAL_STEPS = questions.length
 
 // 네비게이션 타입 정의
@@ -26,6 +27,7 @@ const Questions = ({ navigation }: Props) => {
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([])
   const question = questions[step]
   const isLastStep = step === TOTAL_STEPS - 1
+  const top = useSafeAreaInsets().top
 
   const handleOptionPress = (index: number) => {
     setSelectedAnswers((prev) => {
@@ -45,7 +47,7 @@ const Questions = ({ navigation }: Props) => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { marginTop: top + 60 }]}>
       <RNText color="blue">
         {step + 1}/{TOTAL_STEPS}
       </RNText>
@@ -61,6 +63,7 @@ const Questions = ({ navigation }: Props) => {
             option={option.option}
             isSelected={selectedAnswers[step] === index}
             onPress={() => handleOptionPress(index)}
+            imgSource={QuestionImages[option.imageName]}
           />
         ))}
       </View>
@@ -80,7 +83,6 @@ export default Questions
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 120,
     paddingHorizontal: 20,
   },
   optionsContainer: {

@@ -1,6 +1,9 @@
+import { QuestionImageKeys } from '@assets/images/questions'
+
 type Option = {
   option: string
   score: Partial<Score>
+  imageName: QuestionImageKeys
 }
 
 type Question = {

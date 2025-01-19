@@ -14,9 +14,10 @@ const ResourcePreloader = ({ children }: { children: React.ReactNode }) => {
       try {
         await SplashScreen.preventAutoHideAsync()
 
-        const imagePromises = [...Object.values(images.plants)].map((image) =>
-          Asset.fromModule(image).downloadAsync(),
-        )
+        const imagePromises = [
+          ...Object.values(images.plants),
+          ...Object.values(images.questions),
+        ].map((image) => Asset.fromModule(image).downloadAsync())
 
         await Promise.all(imagePromises)
         setIsReady(fontsLoaded)
