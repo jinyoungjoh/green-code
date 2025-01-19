@@ -61,14 +61,18 @@ const Care = ({
   )
 }
 
-const PlantImage = ({ plants }: { plants: PlantRecommendation['plants'] }) => {
+const PlantInfo = ({ plants }: { plants: PlantRecommendation['plants'] }) => {
   const plantInfo = plantInfoData[plants[0] as PlantInfoDataKeys]
   const { name, description, care } = plantInfo
 
   return (
     <View style={{ gap: 16 }}>
       <View style={styles.container}>
-        <RNText size="t4" bold textAlign="center">
+        <RNText
+          size="t4"
+          textAlign="center"
+          style={{ fontFamily: 'PretendardBold' }}
+        >
           {name}
         </RNText>
         <RNText size="t7" color="darkGrey">
@@ -80,7 +84,7 @@ const PlantImage = ({ plants }: { plants: PlantRecommendation['plants'] }) => {
   )
 }
 
-export default PlantImage
+export default PlantInfo
 
 const styles = StyleSheet.create({
   container: {

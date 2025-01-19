@@ -10,7 +10,7 @@ const Title = ({ name }: { name: PlantRecommendation['name'] }) => {
         size="t2"
         style={{
           textAlign: 'center',
-          fontFamily: 'Paperlogy-7Bold',
+          fontFamily: 'Paperlogy',
           width: 255,
         }}
       >
