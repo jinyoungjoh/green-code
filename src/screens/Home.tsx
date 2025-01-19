@@ -41,7 +41,7 @@ const Home = ({ navigation }: Props) => {
       <RNText style={styles.centeredText} color={'lightBlack'}>
         당신의 공간에 맞는 완벽한 식물을 찾아보세요
       </RNText>
-      <FixedBottomButton txt="시작하기" onPress={onPress} />
+      <FixedBottomButton onPress={onPress}>시작하기</FixedBottomButton>
     </View>
   )
 }
@@ -51,7 +51,6 @@ export default Home
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    maxWidth: 512,
     overflow: 'hidden',
     justifyContent: 'center',
   },

@@ -1,34 +1,22 @@
 import { TColors } from '@styles/colors'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import Button from './Button'
-import { View } from 'react-native'
+import Button, { TButton } from './Button'
 
-const FixedBottomButton = ({
-  txt,
-  color,
-  disabled,
-  onPress,
-}: {
-  txt: string
-  color?: TColors
-  disabled?: boolean
-  onPress: () => void
-}) => {
+const FixedBottomButton = ({ ...props }: TButton) => {
   const safeBottom = useSafeAreaInsets().bottom
 
   return (
-    <View
+    <Button
       style={{
         position: 'absolute',
         bottom: safeBottom < 1 ? 10 : safeBottom,
         left: 20,
         right: 20,
       }}
+      {...props}
     >
-      <Button color={color} onPress={onPress} disabled={disabled}>
-        {txt}
-      </Button>
-    </View>
+      {props.children}
+    </Button>
   )
 }
 

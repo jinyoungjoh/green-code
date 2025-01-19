@@ -66,10 +66,11 @@ const Questions = ({ navigation }: Props) => {
       </View>
       <FixedBottomButton
         color="blue"
-        txt={isLastStep ? '완료' : '다음'}
         onPress={handleNextPress}
         disabled={selectedAnswers[step] === undefined}
-      />
+      >
+        {isLastStep ? '완료' : '다음'}
+      </FixedBottomButton>
     </View>
   )
 }

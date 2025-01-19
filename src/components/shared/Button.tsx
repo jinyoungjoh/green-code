@@ -13,7 +13,7 @@ import Animated, {
 import RNText from './RNText'
 import { colors, TColors } from '@styles/colors'
 
-interface TButton extends PressableProps {
+export interface TButton extends PressableProps {
   onPress?: () => void
   color?: TColors
   style?: StyleProp<ViewStyle>
@@ -73,7 +73,6 @@ export default Button
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
     padding: 16,
     justifyContent: 'center',
     alignItems: 'center',
