@@ -9,7 +9,7 @@
     </div>
   <h3>android</h3>
   <div style="display: inline-block; background-color: #f2f4f6; padding: 20px; border-radius: 20px; width: fit-content">
-    <img src="https://i.imgur.com/19yxZDV.png" alt="ios preview" style="border-radius: 8px; display: block;">
+    <img src="https://i.imgur.com/fyfMxpi.gif" alt="android preview" style="border-radius: 8px; display: block;">
   </div>
 </div>
 
