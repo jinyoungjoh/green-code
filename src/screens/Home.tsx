@@ -6,6 +6,7 @@ import ImageSlider from '@components/home/ImageSlider'
 import { RootStackParamList } from 'src/navigation/Navigation'
 import FixedBottomButton from '@shared/FixedBottomButton'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { webBoxContainer } from '@styles/web'
 
 // 네비게이션 타입 정의
 type HomeScreenNavigationProp = NativeStackNavigationProp<
@@ -23,7 +24,7 @@ const Home = ({ navigation }: Props) => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, webBoxContainer]}>
       <LinearGradient
         colors={['#ffffff', colors.limeGreen]}
         start={{ x: 0, y: 0.3 }}
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     overflow: 'hidden',
+    paddingHorizontal: 20,
     justifyContent: 'center',
   },
   title: {

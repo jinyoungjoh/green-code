@@ -22,13 +22,8 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/faviconSquare.png"
     },
-    "plugins": [
-      [
-        "expo-font"
-      ],
-      "expo-asset"
-    ]
+    "plugins": [["expo-font"], "expo-asset"]
   }
 }

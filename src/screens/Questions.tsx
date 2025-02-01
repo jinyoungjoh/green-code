@@ -10,6 +10,8 @@ import { RootStackParamList } from 'src/navigation/Navigation'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { QuestionImages } from '@assets/images/questions'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { webBoxContainer } from '@styles/web'
+import NavHeaderLeft from 'src/navigation/NavHeaderLeft'
 const TOTAL_STEPS = questions.length
 
 // 네비게이션 타입 정의
@@ -47,7 +49,9 @@ const Questions = ({ navigation }: Props) => {
   }
 
   return (
-    <View style={[styles.container, { marginTop: top + 60 }]}>
+    <View style={[styles.container, , webBoxContainer]}>
+      <NavHeaderLeft />
+
       <RNText color="blue">
         {step + 1}/{TOTAL_STEPS}
       </RNText>
@@ -67,6 +71,7 @@ const Questions = ({ navigation }: Props) => {
           />
         ))}
       </View>
+
       <FixedBottomButton
         color="blue"
         onPress={handleNextPress}

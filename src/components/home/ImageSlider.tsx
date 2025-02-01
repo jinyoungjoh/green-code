@@ -11,7 +11,7 @@ import Plant from './Plant'
 
 const ITEM_WIDTH = 100
 
-const AnimatedRow = ({ data }) => {
+const AnimatedRow = ({ data }: { data: number[] }) => {
   const sv = useSharedValue(0)
   const toValue = (ITEM_WIDTH + 10) * data.length
 

@@ -4,11 +4,13 @@ import { RootStackParamList } from 'src/navigation/Navigation'
 import { RouteProp } from '@react-navigation/native'
 import { LinearGradient } from 'expo-linear-gradient'
 import Title from '@components/recommendation/Title'
-import PlantInfo from '@components/recommendation/PlantInfo'
 import Description from '@components/recommendation/Description'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import Animated, { Easing, FlipInEasyY } from 'react-native-reanimated'
+import Animated, { FlipInEasyY } from 'react-native-reanimated'
 import { colors } from '@styles/colors'
+import PlantInfo from '@components/recommendation/PlantInfo'
+import NavHeaderRight from 'src/navigation/NavHeaderRight'
+import { isWeb, webBoxContainer } from '@styles/web'
 
 type RecommendationNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -26,7 +28,7 @@ const PlantRecommendation = ({ navigation, route }: Props) => {
   } = route.params
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, webBoxContainer]}>
       <LinearGradient
         colors={['#CEE6FD', '#FFFFFF', '#CEE1FC', '#FFFFFF']}
         locations={[0, 0.24, 0.69, 1]}
@@ -34,11 +36,14 @@ const PlantRecommendation = ({ navigation, route }: Props) => {
         end={{ x: 1, y: 1 }} // 오른쪽 하단
         style={styles.gradient}
       >
+        <NavHeaderRight navigation={navigation} />
         <Animated.View
           style={styles.infoContainer}
-          entering={FlipInEasyY.duration(900)
-            .delay(300)
-            .easing(Easing.in(Easing.elastic(2.3)))}
+          entering={FlipInEasyY.duration(!isWeb ? 900 : 280)
+            .delay(!isWeb ? 300 : 150)
+            .springify()
+            .damping(10)
+            .mass(1.2)}
         >
           <Title name={name} />
           <Description description={description} />

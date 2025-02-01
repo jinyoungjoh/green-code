@@ -1,4 +1,3 @@
-import { TColors } from '@styles/colors'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import Button, { TButton } from './Button'
 
@@ -9,7 +8,7 @@ const FixedBottomButton = ({ ...props }: TButton) => {
     <Button
       style={{
         position: 'absolute',
-        bottom: safeBottom < 1 ? 10 : safeBottom,
+        bottom: safeBottom < 1 ? 15 : safeBottom,
         left: 20,
         right: 20,
       }}
