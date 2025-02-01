@@ -5,6 +5,7 @@
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
+    "vercel-build": "expo build:web",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint .",
