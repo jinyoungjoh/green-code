@@ -1,6 +1,6 @@
 export default {
-  Paperlogy: require('./Paperlogy-7Bold.ttf'),
-  PretendardSemiBold: require('./Pretendard-SemiBold.otf'),
-  PretendardBold: require('./Pretendard-Bold.otf'),
-  PretendardMedium: require('./Pretendard-Medium.otf'),
+  Paperlogy: require('./subset-Paperlogy-7Bold.ttf'),
+  PretendardSemiBold: require('./subset-Pretendard-SemiBold.ttf'),
+  PretendardBold: require('./subset-Pretendard-Bold.ttf'),
+  PretendardMedium: require('./subset-Pretendard-Medium.ttf'),
 }
