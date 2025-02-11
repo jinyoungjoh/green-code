@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native'
+import { SafeAreaView, StyleSheet, View } from 'react-native'
 import { useState } from 'react'
 import RNText from '@shared/RNText'
 import { questions } from 'src/data/questions'
@@ -9,7 +9,6 @@ import { recommendPlants } from 'src/utils/plantUtils'
 import { RootStackParamList } from 'src/navigation/Navigation'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { QuestionImages } from '@assets/images/questions'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { webBoxContainer } from '@styles/web'
 import NavHeaderLeft from 'src/navigation/NavHeaderLeft'
 const TOTAL_STEPS = questions.length
@@ -29,7 +28,6 @@ const Questions = ({ navigation }: Props) => {
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([])
   const question = questions[step]
   const isLastStep = step === TOTAL_STEPS - 1
-  const top = useSafeAreaInsets().top
 
   const handleOptionPress = (index: number) => {
     setSelectedAnswers((prev) => {
@@ -50,28 +48,31 @@ const Questions = ({ navigation }: Props) => {
 
   return (
     <View style={[styles.container, , webBoxContainer]}>
-      <NavHeaderLeft />
-
-      <RNText color="blue">
-        {step + 1}/{TOTAL_STEPS}
-      </RNText>
-      <Spacer size={4} />
-      <RNText size="t4" style={{ height: 58, flexWrap: 'wrap', width: '100%' }}>
-        {question.question}
-      </RNText>
-      <Spacer size={20} />
-      <View style={styles.optionsContainer}>
-        {question.options.map((option, index) => (
-          <Option
-            key={index}
-            option={option.option}
-            isSelected={selectedAnswers[step] === index}
-            onPress={() => handleOptionPress(index)}
-            imgSource={QuestionImages[option.imageName]}
-          />
-        ))}
-      </View>
-
+      <SafeAreaView>
+        <NavHeaderLeft />
+        <RNText color="blue">
+          {step + 1}/{TOTAL_STEPS}
+        </RNText>
+        <Spacer size={4} />
+        <RNText
+          size="t4"
+          style={{ height: 58, flexWrap: 'wrap', width: '100%' }}
+        >
+          {question.question}
+        </RNText>
+        <Spacer size={20} />
+        <View style={styles.optionsContainer}>
+          {question.options.map((option, index) => (
+            <Option
+              key={index}
+              option={option.option}
+              isSelected={selectedAnswers[step] === index}
+              onPress={() => handleOptionPress(index)}
+              imgSource={QuestionImages[option.imageName]}
+            />
+          ))}
+        </View>
+      </SafeAreaView>
       <FixedBottomButton
         color="blue"
         onPress={handleNextPress}

@@ -6,7 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import Title from '@components/recommendation/Title'
 import Description from '@components/recommendation/Description'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import Animated, { FlipInEasyY } from 'react-native-reanimated'
+import Animated, { FadeIn, FlipInEasyY } from 'react-native-reanimated'
 import { colors } from '@styles/colors'
 import PlantInfo from '@components/recommendation/PlantInfo'
 import NavHeaderRight from 'src/navigation/NavHeaderRight'
@@ -39,11 +39,15 @@ const PlantRecommendation = ({ navigation, route }: Props) => {
         <NavHeaderRight navigation={navigation} />
         <Animated.View
           style={styles.infoContainer}
-          entering={FlipInEasyY.duration(!isWeb ? 900 : 280)
-            .delay(!isWeb ? 300 : 150)
-            .springify()
-            .damping(10)
-            .mass(1.2)}
+          entering={
+            !isWeb
+              ? FlipInEasyY.duration(!isWeb ? 900 : 280)
+                  .delay(!isWeb ? 300 : 150)
+                  .springify()
+                  .damping(10)
+                  .mass(1.2)
+              : FadeIn
+          }
         >
           <Title name={name} />
           <Description description={description} />

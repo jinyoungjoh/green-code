@@ -31,7 +31,7 @@ export const questions: Questions = [
     question: '반려동물이 있나요?',
     options: [
       {
-        option: '네, 강아지 또는 고양이가 있습니다',
+        option: '네, 반려동물이 있습니다',
         score: { S: 1 },
         imageName: 'circle',
       },
